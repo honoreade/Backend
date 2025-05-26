@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PHP CRUD Examples</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        h1 {
+            color: #333;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+        .container {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .card {
+            flex: 1;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        h2 {
+            margin-top: 0;
+            color: #444;
+        }
+        p {
+            color: #666;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+        .btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>PHP CRUD Examples</h1>
+    
+    <p>
+        This demo shows two different approaches to implementing CRUD (Create, Read, Update, Delete) 
+        operations in PHP:
+    </p>
+    
+    <div class="container">
+        <div class="card">
+            <h2>Traditional Approach</h2>
+            <p>
+                This implementation uses the traditional PHP approach with page reloads.
+                Each action (create, read, update, delete) causes the page to reload.
+            </p>
+            <p>
+                <strong>Technologies:</strong> PHP, HTML, CSS
+            </p>
+            <a href="users-old.php" class="btn">View Demo</a>
+        </div>
+        
+        <div class="card">
+            <h2>Modern Approach</h2>
+            <p>
+                This implementation uses JavaScript and AJAX to perform CRUD operations
+                without page reloads, providing a smoother user experience.
+            </p>
+            <p>
+                <strong>Technologies:</strong> PHP, JavaScript, Fetch API, HTML, CSS
+            </p>
+            <a href="users-new.php" class="btn">View Demo</a>
+        </div>
+    </div>
+    
+    <div style="margin-top: 30px;">
+        <h2>Technical Details</h2>
+        <p>
+            Both implementations use the same backend API and SQLite database. The difference is in how
+            the frontend interacts with the backend:
+        </p>
+        <ul>
+            <li>Traditional: Form submissions and page reloads</li>
+            <li>Modern: JavaScript fetch API and DOM manipulation</li>
+        </ul>
+        <p>
+            The API endpoint (<code>api-users.php</code>) handles all CRUD operations and returns JSON responses.
+        </p>
+    </div>
+</body>
+</html>

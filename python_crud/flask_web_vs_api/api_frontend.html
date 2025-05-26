@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flask API Frontend</title>
+</head>
+<body>
+    <h1>Users (AJAX, No Reload)</h1>
+    <ul id="userList"></ul>
+
+    <input id="nameInput" placeholder="Enter name">
+    <button onclick="addUser()">Add User</button>
+
+    <script>
+        function loadUsers() {
+            fetch("http://127.0.0.1:5001/api/users")
+                .then(res => res.json())
+                .then(users => {
+                    const ul = document.getElementById("userList");
+                    ul.innerHTML = "";
+                    users.forEach(user => {
+                        const li = document.createElement("li");
+                        li.textContent = user;
+                        ul.appendChild(li);
+                    });
+                });
+        }
+
+        function addUser() {
+            const name = document.getElementById("nameInput").value;
+            fetch("http://127.0.0.1:5001/api/users", {
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify({name})
+            }).then(() => {
+                loadUsers();
+                document.getElementById("nameInput").value = "";
+            });
+        }
+
+        loadUsers();
+    </script>
+</body>
+</html>

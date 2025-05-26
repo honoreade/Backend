@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block title %}Python CRUD Examples{% endblock %}
+
+{% block header %}Python CRUD Examples{% endblock %}
+
+{% block content %}
+<p>
+    This demo shows two different approaches to implementing CRUD (Create, Read, Update, Delete) 
+    operations in Python Flask:
+</p>
+
+<div class="flex-container">
+    <div class="card flex-item">
+        <h2>Traditional Approach</h2>
+        <p>
+            This implementation uses the traditional Flask approach with page reloads.
+            Each action (create, read, update, delete) causes the page to reload.
+        </p>
+        <p>
+            <strong>Technologies:</strong> Python, Flask, Jinja2, SQLAlchemy
+        </p>
+        <a href="{{ url_for('users_old') }}" class="btn">View Demo</a>
+    </div>
+    
+    <div class="card flex-item">
+        <h2>Modern Approach</h2>
+        <p>
+            This implementation uses JavaScript and AJAX to perform CRUD operations
+            without page reloads, providing a smoother user experience.
+        </p>
+        <p>
+            <strong>Technologies:</strong> Python, Flask, JavaScript, Fetch API
+        </p>
+        <a href="{{ url_for('users_new') }}" class="btn">View Demo</a>
+    </div>
+</div>
+
+<div class="card" style="margin-top: 20px;">
+    <h2>Technical Details</h2>
+    <p>
+        Both implementations use the same backend API and SQLite database. The difference is in how
+        the frontend interacts with the backend:
+    </p>
+    <ul>
+        <li>Traditional: Form submissions and page reloads</li>
+        <li>Modern: JavaScript fetch API and DOM manipulation</li>
+    </ul>
+    <p>
+        The API endpoints (<code>/api/users</code>) handle all CRUD operations and return JSON responses.
+    </p>
+</div>
+{% endblock %}
